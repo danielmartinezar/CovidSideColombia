@@ -1,7 +1,7 @@
 import { React, Fragment } from 'react'
 import Sidebar from './Sidebar'
 import './styles/dashboard.css'
-import Graphside from './Graphside'
+import Graphside from './Graphside.jsx'
 export default function Dashboard() {
     return (
         <div>

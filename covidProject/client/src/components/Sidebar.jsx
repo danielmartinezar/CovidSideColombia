@@ -1,4 +1,5 @@
 import React from 'react'
+import './styles/Sidebar.css'
 export default function Sidebar() {
     return (
         <div >
@@ -14,7 +15,35 @@ export default function Sidebar() {
                     </h2>
                     <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                         <div className="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <div className="container p-0">
+                                <div className="row">
+                                    <div className="col-6">
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                            <option selected>Year</option>
+                                            <option value="1">2020</option>
+                                            <option value="2">2021</option>
+                                            <option value="3">2022</option>
+                                        </select>
+                                    </div>
+                                    <div className="col">
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                            <option selected>Month</option>
+                                            <option value="1">Enero</option>
+                                            <option value="2">Febrero</option>
+                                            <option value="3">Marzo</option>
+                                            <option value="4">Abril</option>
+                                            <option value="5">Mayo</option>
+                                            <option value="6">Junio</option>
+                                            <option value="7">Julio</option>
+                                            <option value="8">Agosto</option>
+                                            <option value="9">Septiembre</option>
+                                            <option value="10">Octubre</option>
+                                            <option value="11">Noviembre</option>
+                                            <option value="12">Diciembre</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -26,7 +55,28 @@ export default function Sidebar() {
                     </h2>
                     <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                         <div className="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <div className="container p-0">
+                                <div className="row">
+                                    <div className="col-12">
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                            <option selected>Departamento</option>
+                                            <option value="1">2020</option>
+                                            <option value="2">2021</option>
+                                            <option value="3">2022</option>
+                                        </select>
+                                    </div>
+                                    <div className="row mt-2">
+                                        <div className="col-12">
+                                            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                                <option selected>Ciudad</option>
+                                                <option value="1">2020</option>
+                                                <option value="2">2021</option>
+                                                <option value="3">2022</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -38,7 +88,24 @@ export default function Sidebar() {
                     </h2>
                     <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                         <div className="accordion-body">
-                            <input className=''placeholder='Ingresa filtro'></input>
+                            <div className="container p-0">
+                                <div className="row">
+                                    <div className="col-12">
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                            <option selected>Campo</option>
+                                            <option value="1">Sexo</option>
+                                            <option value="2">Edad</option>
+                                            <option value="3">Estado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="row mt-2">
+                                    <div className="col-12">
+                                        <input className='input' id='inputCampo' placeholder='Ingresa campo'></input>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
