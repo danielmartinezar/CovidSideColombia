@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles/Sidebar.css'
+
+
+
 export default function Sidebar() {
+    const [yearState, setYearState] = useState('')
+    const [monthState, setMonthState] = useState('')
+    const [departmentState, setDepartmentState] = useState('')
+    const [cityState, setCityState] = useState('')
+    const [fieldState, setFieldState] = useState('')
     return (
         <div >
             <h4 className='m-3'><i>CovidSite Colombia</i></h4>
@@ -18,16 +26,24 @@ export default function Sidebar() {
                             <div className="container p-0">
                                 <div className="row">
                                     <div className="col-6">
-                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                            <option selected>Year</option>
-                                            <option value="1">2020</option>
-                                            <option value="2">2021</option>
-                                            <option value="3">2022</option>
+                                        <select className="form-select form-select-sm" aria-label=".form-select-sm example" onChange={
+                                            (e) => {
+                                                const selectedYear = e.target.value;
+                                                setYearState(selectedYear)
+                                            }}>
+                                            <option selected>Año</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
                                         </select>
                                     </div>
                                     <div className="col">
-                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                            <option selected>Month</option>
+                                        <select className="form-select form-select-sm" aria-label=".form-select-sm example"
+                                            onChange={(e) => {
+                                                const selectedMonth = e.target.value;
+                                                setMonthState(selectedMonth)
+                                            }}>
+                                            <option selected>Mes</option>
                                             <option value="1">Enero</option>
                                             <option value="2">Febrero</option>
                                             <option value="3">Marzo</option>
@@ -50,7 +66,7 @@ export default function Sidebar() {
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                            Lugar
+                            Ubicación
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
@@ -58,7 +74,11 @@ export default function Sidebar() {
                             <div className="container p-0">
                                 <div className="row">
                                     <div className="col-12">
-                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                        <select className="form-select form-select-sm" aria-label=".form-select-sm example"
+                                            onChange={(e) => {
+                                                const selectedDepart = e.target.value;
+                                                setDepartmentState(selectedDepart)
+                                            }}>
                                             <option selected>Departamento</option>
                                             <option value="1">2020</option>
                                             <option value="2">2021</option>
@@ -67,7 +87,7 @@ export default function Sidebar() {
                                     </div>
                                     <div className="row mt-2">
                                         <div className="col-12">
-                                            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                            <select className="form-select form-select-sm" aria-label=".form-select-sm example">
                                                 <option selected>Ciudad</option>
                                                 <option value="1">2020</option>
                                                 <option value="2">2021</option>
@@ -91,7 +111,9 @@ export default function Sidebar() {
                             <div className="container p-0">
                                 <div className="row">
                                     <div className="col-12">
-                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                        <select className="form-select form-select-sm" aria-label=".form-select-sm example"
+                                            onChange={(e) => { const selectedField = e.target.value 
+                                            setFieldState(selectedField)}}>
                                             <option selected>Campo</option>
                                             <option value="1">Sexo</option>
                                             <option value="2">Edad</option>
