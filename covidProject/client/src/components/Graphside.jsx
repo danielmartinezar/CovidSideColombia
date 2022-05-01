@@ -1,9 +1,18 @@
-import React from 'react'
-import { Pie } from 'react-chartjs-2'
+import { useEffect,React,useState} from 'react'
+import axios from 'axios'
 import Generalchart from './Generalchart.jsx'
 import Piechart from './Piechart.jsx'
 import './styles/Graphside.css'
+
 export default function Graphside() {
+    const [dataState,setDataState ] = useState([])
+    useEffect(() => {
+        async function requestFilter() {
+            await axios.get(URL).then((response) => {
+                console.log(response.data)
+            })
+        }
+    }, [dataState])
     return (
         <div>
             <div className='container-fluid mt-5 '>
@@ -26,7 +35,7 @@ export default function Graphside() {
                     <div className='col-4 order'>
                         <div className='card'>
                             <div className='card-body'>
-                                <Piechart/>
+                                <Piechart />
                             </div>
                         </div>
                     </div>
@@ -38,7 +47,7 @@ export default function Graphside() {
                         </div></div>
                     <div className='col-4'><div className='card' id='thirdChart'>
                         <div className='card-body'>
-                            <Generalchart/>
+                            <Generalchart />
                         </div>
                     </div></div>
                 </div>
